@@ -4,23 +4,17 @@ const botaoP1 = document.querySelector("#botaoP1");
 const botaoP2 = document.querySelector("#botaoP2");
 const botaoReset = document.querySelector("#botaoReset");
 const pontuacaoAlvo = document.querySelector("#pontuacaoAlvo");
-const jogo = document.querySelector("#controleJogo");
-
-jogo.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log(typeof pontuacaoAlvo.value);
-});
-
-pontuacaoAlvo.addEventListener("click", () => {
-  placar.pontuacaoAlvo = parseInt(pontuacaoAlvo.value);
-  reiniciar();
-});
 
 let placar = {
   pontuacaoP1: 0,
   pontuacaoP2: 0,
   pontuacaoAlvo: 7,
 };
+
+pontuacaoAlvo.addEventListener("change", () => {
+  placar.pontuacaoAlvo = parseInt(pontuacaoAlvo.value);
+  reiniciar();
+});
 
 botaoP1.addEventListener("click", (e) => {
   addPtoP1();
@@ -34,9 +28,7 @@ botaoP2.addEventListener("click", (e) => {
   atualizaPlacar();
 });
 
-botaoReset.addEventListener("click", (e) => {
-  reiniciar();
-});
+botaoReset.addEventListener("click", reiniciar);
 
 function atualizaPlacar() {
   placarP1.innerText = placar.pontuacaoP1;
