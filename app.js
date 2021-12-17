@@ -4,6 +4,7 @@ const botaoP1 = document.querySelector("#botaoP1");
 const botaoP2 = document.querySelector("#botaoP2");
 const botaoReset = document.querySelector("#botaoReset");
 const pontuacaoAlvo = document.querySelector("#pontuacaoAlvo");
+const tituloCard = document.querySelector("#tituloCard");
 
 let placar = {
   pontuacaoP1: 0,
@@ -13,6 +14,7 @@ let placar = {
 
 pontuacaoAlvo.addEventListener("change", () => {
   placar.pontuacaoAlvo = parseInt(pontuacaoAlvo.value);
+  tituloCard.innerText = pontuacaoAlvo.value;
   reiniciar();
 });
 
@@ -44,14 +46,14 @@ function addPtoP2() {
 }
 
 function P1Vencedor() {
-  placarP1.classList.add("vencedor");
-  placarP2.classList.add("perdedor");
+  placarP1.classList.add("has-text-success");
+  placarP2.classList.add("has-text-danger");
   desabilitaBotoes(true);
 }
 
 function P2Vencedor() {
-  placarP2.classList.add("vencedor");
-  placarP1.classList.add("perdedor");
+  placarP2.classList.add("has-text-success");
+  placarP1.classList.add("has-text-danger");
   desabilitaBotoes(true);
 }
 

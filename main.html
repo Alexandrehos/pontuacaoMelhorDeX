@@ -5,27 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
   </head>
   <body>
-    <h1>
-      <span id="player1">0</span> to
-      <span id="player2">0</span>
-    </h1>
-    <p>Use os botões abaixo para controlar o placar</p>
-    <h3>
-      Melhor de:
-      <select name="qtdePtos" id="pontuacaoAlvo">
-        <option value="3">3</option>
-        <option value="5">5</option>
-        <option value="7" selected>7</option>
-        <option value="9">9</option>
-        <option value="11">11</option>
-      </select>
-    </h3>
-    <button name="addP1" id="botaoP1">Player 1 +1</button
-    ><button name="addP2" id="botaoP2">Player 2 +1</button
-    ><button name="reset" id="botaoReset">Reiniciar</button>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-half is-offset-one-quarter">
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Melhor de &nbsp; <span id="tituloCard">7</span>
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <h1 class="title is-1">
+                    <span id="player1">0</span> to
+                    <span id="player2">0</span>
+                  </h1>
+                  <p class="subtitle">
+                    Use os botões abaixo para incrementar a pontuação dos
+                    jogadores
+                  </p>
+                  <label for="pontuacaoAlvo" class="label is-large is-inline"
+                    >Melhor de:&nbsp;</label
+                  >
+                  <div class="select">
+                    <select name="qtdePtos" id="pontuacaoAlvo">
+                      <option value="3">3</option>
+                      <option value="5">5</option>
+                      <option value="7" selected>7</option>
+                      <option value="9">9</option>
+                      <option value="11">11</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <footer class="card-footer">
+                <button
+                  id="botaoP1"
+                  class="is-primary button card-footer-item is-large"
+                >
+                  Player 1 +1
+                </button>
+                <button
+                  id="botaoP2"
+                  class="is-info button card-footer-item is-large"
+                >
+                  Player 2 +1
+                </button>
+                <button
+                  id="botaoReset"
+                  class="is-danger button card-footer-item is-large"
+                >
+                  Reiniciar
+                </button>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="app.js"></script>
   </body>
 </html>
